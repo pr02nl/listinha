@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "listinha_app"
+	},
+	{
+		"path": "listinha_server"
+	}
+],
+  "settings": {
+    "conventionalCommits.scopes": ["main"]
+  }
+}
