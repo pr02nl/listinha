@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 void main(List<String> args) async {
-  print('Server listening on port');
+  log('Server listening on port');
 }
