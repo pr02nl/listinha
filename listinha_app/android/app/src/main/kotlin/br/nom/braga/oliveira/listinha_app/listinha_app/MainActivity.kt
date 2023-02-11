@@ -1,4 +1,4 @@
-package br.nom.braga.oliveira.listinha_app.listinha_app
+package br.nom.braga.oliveira.listinha_app
 
 import io.flutter.embedding.android.FlutterActivity
 
