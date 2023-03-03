@@ -1,4 +1,4 @@
-name: listinha_app
+name: listinha
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -35,6 +35,12 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  uno: ^1.0.1+5
+  result_dart: ^1.0.5
+  flutter_modular: ^5.0.3
+  realm: ^1.0.0
+  intl: ^0.18.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -45,7 +51,8 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  mocktail: ^0.3.0
+  flutterando_analysis: ^0.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
