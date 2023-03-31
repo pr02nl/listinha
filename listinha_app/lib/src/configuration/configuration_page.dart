@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:rx_notifier/rx_notifier.dart';
 
 import '../shared/stores/app_store.dart';
 
@@ -11,12 +12,17 @@ class ConfigurationPage extends StatefulWidget {
 }
 
 class _ConfigurationPageState extends State<ConfigurationPage> {
+  final appStore = Modular.get<AppStore>();
+
+  void _changeThemeMode(ThemeMode? mode) {
+    if (mode != null) {
+      appStore.themeMode = mode;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final appStore = context.watch<AppStore>(
-      (store) => store.themeMode,
-    );
-
+    context.select(() => appStore.themeMode);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Listinha'),
@@ -42,20 +48,20 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             const SizedBox(height: 10),
             RadioListTile<ThemeMode>(
               value: ThemeMode.system,
-              groupValue: appStore.themeMode.value,
-              onChanged: appStore.changeThemeMode,
+              groupValue: appStore.themeMode,
+              onChanged: _changeThemeMode,
               title: const Text('Sistema'),
             ),
             RadioListTile<ThemeMode>(
               value: ThemeMode.light,
-              groupValue: appStore.themeMode.value,
-              onChanged: appStore.changeThemeMode,
+              groupValue: appStore.themeMode,
+              onChanged: _changeThemeMode,
               title: const Text('Claro'),
             ),
             RadioListTile<ThemeMode>(
               value: ThemeMode.dark,
-              groupValue: appStore.themeMode.value,
-              onChanged: appStore.changeThemeMode,
+              groupValue: appStore.themeMode,
+              onChanged: _changeThemeMode,
               title: const Text('Escuro'),
             ),
             const SizedBox(height: 20),
